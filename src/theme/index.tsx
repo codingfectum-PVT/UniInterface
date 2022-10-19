@@ -59,7 +59,7 @@ const opacities = {
 const deprecated_mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } = Object.keys(
   MEDIA_WIDTHS
 ).reduce((accumulator, size) => {
-  ;(accumulator as any)[size] = (a: any, b: any, c: any) => css`
+  ; (accumulator as any)[size] = (a: any, b: any, c: any) => css`
     @media (max-width: ${(MEDIA_WIDTHS as any)[size]}px) {
       ${css(a, b, c)}
     }
@@ -140,56 +140,56 @@ function oldColors(darkMode: boolean): Colors {
     deprecated_black,
 
     // text
-    deprecated_text1: darkMode ? '#FFFFFF' : '#000000',
-    deprecated_text2: darkMode ? '#C3C5CB' : '#565A69',
-    deprecated_text3: darkMode ? '#8F96AC' : '#6E727D',
-    deprecated_text4: darkMode ? '#B2B9D2' : '#C3C5CB',
-    deprecated_text5: darkMode ? '#2C2F36' : '#EDEEF2',
+    deprecated_text1: '#FFFFFF',
+    deprecated_text2: '#C3C5CB',
+    deprecated_text3: '#8F96AC',
+    deprecated_text4: '#B2B9D2',
+    deprecated_text5: '#2C2F36',
 
     // backgrounds / greys
-    deprecated_bg0: darkMode ? '#191B1F' : '#FFF',
-    deprecated_bg1: darkMode ? '#212429' : '#F7F8FA',
-    deprecated_bg2: darkMode ? '#2C2F36' : '#EDEEF2',
-    deprecated_bg3: darkMode ? '#40444F' : '#CED0D9',
-    deprecated_bg4: darkMode ? '#565A69' : '#888D9B',
-    deprecated_bg5: darkMode ? '#6C7284' : '#888D9B',
-    deprecated_bg6: darkMode ? '#1A2028' : '#6C7284',
+    deprecated_bg0: '#000000',
+    deprecated_bg1: '#212429',
+    deprecated_bg2: '#2C2F36',
+    deprecated_bg3: '#40444F',
+    deprecated_bg4: '#565A69',
+    deprecated_bg5: '#6C7284',
+    deprecated_bg6: '#1A2028',
 
     //specialty colors
-    deprecated_modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,0.3)',
-    deprecated_advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
+    deprecated_modalBG: 'rgba(0,0,0,.425)',
+    deprecated_advancedBG: 'rgba(0,0,0,0.1)',
 
     //primary colors
-    deprecated_primary1: darkMode ? '#2172E5' : '#E8006F',
-    deprecated_primary2: darkMode ? '#3680E7' : '#FF8CC3',
-    deprecated_primary3: darkMode ? '#4D8FEA' : '#FF99C9',
-    deprecated_primary4: darkMode ? '#376bad70' : '#F6DDE8',
-    deprecated_primary5: darkMode ? '#153d6f70' : '#FDEAF1',
+    deprecated_primary1: '#d3ac6a',
+    deprecated_primary2: '#14120e',
+    deprecated_primary3: '#4D8FEA',
+    deprecated_primary4: '#376bad70',
+    deprecated_primary5: '#153d6f70',
 
     // color text
-    deprecated_primaryText1: darkMode ? '#5090ea' : '#D50066',
+    deprecated_primaryText1: '#5090ea',
 
     // secondary colors
-    deprecated_secondary1: darkMode ? '#2172E5' : '#E8006F',
-    deprecated_secondary2: darkMode ? '#17000b26' : '#F6DDE8',
-    deprecated_secondary3: darkMode ? '#17000b26' : '#FDEAF1',
+    deprecated_secondary1: '#2172E5',
+    deprecated_secondary2: '#17000b26',
+    deprecated_secondary3: '#17000b26',
 
     // other
-    deprecated_red1: darkMode ? '#FF4343' : '#DA2D2B',
-    deprecated_red2: darkMode ? '#F82D3A' : '#DF1F38',
+    deprecated_red1: '#FF4343',
+    deprecated_red2: '#F82D3A',
     deprecated_red3: '#D60000',
-    deprecated_green1: darkMode ? '#27AE60' : '#007D35',
+    deprecated_green1: '#27AE60',
     deprecated_yellow1: '#E3A507',
     deprecated_yellow2: '#FF8F00',
     deprecated_yellow3: '#F3B71E',
-    deprecated_blue1: darkMode ? '#2172E5' : '#0068FC',
-    deprecated_blue2: darkMode ? '#5199FF' : '#0068FC',
-    deprecated_error: darkMode ? '#FD4040' : '#DF1F38',
-    deprecated_success: darkMode ? '#27AE60' : '#007D35',
+    deprecated_blue1: '#2172E5',
+    deprecated_blue2: '#5199FF',
+    deprecated_error: '#FD4040',
+    deprecated_success: '#27AE60',
     deprecated_warning: '#FF8F00',
 
     // dont wanna forget these blue yet
-    deprecated_blue4: darkMode ? '#153d6f70' : '#C4D9F8',
+    deprecated_blue4: '#153d6f70',
   }
 }
 
@@ -302,7 +302,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   return <StyledComponentsThemeProvider theme={themeObject}>{children}</StyledComponentsThemeProvider>
 }
 
-const TextWrapper = styled(Text)<{ color: keyof AllColors }>`
+const TextWrapper = styled(Text) <{ color: keyof AllColors }>`
   color: ${({ color, theme }) => (theme as any)[color]};
 `
 

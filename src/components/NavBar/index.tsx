@@ -1,18 +1,19 @@
 import { Trans } from '@lingui/macro'
 import { useWeb3React } from '@web3-react/core'
 import Web3Status from 'components/Web3Status'
-import { NftVariant, useNftFlag } from 'featureFlags/flags/nft'
+import { useNftFlag } from 'featureFlags/flags/nft'
 import { chainIdToBackendName } from 'graphql/data/util'
 import { Box } from 'nft/components/Box'
 import { Row } from 'nft/components/Flex'
-import { UniIcon } from 'nft/components/icons'
+// import { UniIcon } from 'nft/components/icons'
 import { ReactNode } from 'react'
-import { NavLink, NavLinkProps, useLocation } from 'react-router-dom'
+import { NavLinkProps, useLocation } from 'react-router-dom'
+import styled from 'styled-components/macro'
 
-import { ChainSelector } from './ChainSelector'
-import { MenuDropdown } from './MenuDropdown'
-import { SearchBar } from './SearchBar'
-import { ShoppingBag } from './ShoppingBag'
+// import { ChainSelector } from './ChainSelector'
+// import { MenuDropdown } from './MenuDropdown'
+// import { SearchBar } from './SearchBar'
+// import { ShoppingBag } from './ShoppingBag'
 import * as styles from './style.css'
 
 interface MenuItemProps {
@@ -22,16 +23,28 @@ interface MenuItemProps {
   children: ReactNode
 }
 
+const LinkItems = styled.a`
+  color: #ffffff;
+  background-color: unset;
+  border-radius: 0px; 
+  border-bottom: 2px solid transparent;
+
+  &:hover,&active,&:nth-child(1){
+    color: #d3ac6a;
+    border-color: #d3ac6a;
+  }
+
+`
 const MenuItem = ({ href, id, isActive, children }: MenuItemProps) => {
   return (
-    <NavLink
-      to={href}
+    <LinkItems
+      href={href}
       className={isActive ? styles.activeMenuItem : styles.menuItem}
       id={id}
       style={{ textDecoration: 'none' }}
     >
       {children}
-    </NavLink>
+    </LinkItems>
   )
 }
 
@@ -50,19 +63,17 @@ const PageTabs = () => {
 
   return (
     <>
-      <MenuItem href="/swap" isActive={pathname.startsWith('/swap')}>
-        <Trans>Swap</Trans>
+      <MenuItem href="#/swap" isActive={pathname.startsWith('/swap')}>
+        <Trans>Buy</Trans>
       </MenuItem>
-      <MenuItem href={`/tokens/${chainName.toLowerCase()}`} isActive={pathname.startsWith('/tokens')}>
-        <Trans>Tokens</Trans>
+      <MenuItem href={`https://www.dextools.io/app/ether/pair-explorer/0x2eda072ab9203cfdf22c8793602f2e1020fabec2`}>
+        <Trans>Chart</Trans>
       </MenuItem>
-      {nftFlag === NftVariant.Enabled && (
-        <MenuItem href="/nfts" isActive={pathname.startsWith('/nfts')}>
-          <Trans>NFTs</Trans>
-        </MenuItem>
-      )}
-      <MenuItem href="/pool" id={'pool-nav-link'} isActive={isPoolActive}>
-        <Trans>Pool</Trans>
+      <MenuItem href={`https://tsuka2.org/#about`} >
+        <Trans>About</Trans>
+      </MenuItem>
+      <MenuItem href={`https://tsuka2.org/#tokenomics`}>
+        <Trans>Tokenomics</Trans>
       </MenuItem>
     </>
   )
@@ -74,35 +85,18 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={styles.nav}>
-        <Box display="flex" height="full" flexWrap="nowrap" alignItems="stretch">
-          <Box className={styles.leftSideContainer}>
+      <nav style={{ width: '100%', maxWidth: 1300, margin: 'auto', padding: '10px' }}>
+        <Box display="flex" height="full" flexWrap="nowrap" alignItems="stretch" justifyContent="space-between">
+          <Box>
             <Box as="a" href="#/swap" className={styles.logoContainer}>
-              <UniIcon width="48" height="48" className={styles.logo} />
+              <img src='./images/logo.png' style={{ width: 'auto', height: 50 }} />
             </Box>
-            <Box display={{ sm: 'flex', lg: 'none' }}>
-              <ChainSelector leftAlign={true} />
-            </Box>
-            <Row gap="8" display={{ sm: 'none', lg: 'flex' }}>
+          </Box>
+          <Box display="flex" >
+            <Row gap="4" display={{ sm: 'none', lg: 'flex' }}>
               <PageTabs />
             </Row>
-          </Box>
-          <Box className={styles.middleContainer}>
-            <SearchBar />
-          </Box>
-          <Box className={styles.rightSideContainer}>
-            <Row gap="12">
-              <Box display={{ sm: 'flex', xl: 'none' }}>
-                <SearchBar />
-              </Box>
-              <Box display={{ sm: 'none', lg: 'flex' }}>
-                <MenuDropdown />
-              </Box>
-              {showShoppingBag && <ShoppingBag />}
-              <Box display={{ sm: 'none', lg: 'flex' }}>
-                <ChainSelector />
-              </Box>
-
+            <Row gap="4">
               <Web3Status />
             </Row>
           </Box>
@@ -110,9 +104,6 @@ const Navbar = () => {
       </nav>
       <Box className={styles.mobileBottomBar}>
         <PageTabs />
-        <Box marginY="4">
-          <MenuDropdown />
-        </Box>
       </Box>
     </>
   )

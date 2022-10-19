@@ -2,7 +2,7 @@
 import { t, Trans } from '@lingui/macro'
 import { Percent } from '@uniswap/sdk-core'
 import { useWeb3React } from '@web3-react/core'
-import { sendEvent } from 'components/analytics'
+// import { sendEvent } from 'components/analytics'
 import { RedesignVariant, useRedesignFlag } from 'featureFlags/flags/redesign'
 import { isSupportedChainId } from 'lib/hooks/routing/clientSideSmartOrderRouter'
 import { useRef, useState } from 'react'
@@ -23,7 +23,7 @@ import { RowBetween, RowFixed } from '../Row'
 import Toggle from '../Toggle'
 import TransactionSettings from '../TransactionSettings'
 
-const StyledMenuIcon = styled(Settings)<{ redesignFlag: boolean }>`
+const StyledMenuIcon = styled(Settings) <{ redesignFlag: boolean }>`
   height: 20px;
   width: 20px;
 
@@ -32,7 +32,7 @@ const StyledMenuIcon = styled(Settings)<{ redesignFlag: boolean }>`
   }
 `
 
-const StyledCloseIcon = styled(X)<{ redesignFlag: boolean }>`
+const StyledCloseIcon = styled(X) <{ redesignFlag: boolean }>`
   height: 20px;
   width: 20px;
   :hover {
@@ -89,7 +89,7 @@ const MenuFlyout = styled.span<{ redesignFlag: boolean }>`
   border: 1px solid ${({ theme, redesignFlag }) => (redesignFlag ? theme.backgroundOutline : theme.deprecated_bg3)};
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
     0px 24px 32px rgba(0, 0, 0, 0.01);
-  border-radius: 12px;
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
   font-size: 1rem;
@@ -135,12 +135,13 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
   const [expertMode, toggleExpertMode] = useExpertModeManager()
 
   const [clientSideRouter, setClientSideRouter] = useClientSideRouter()
-
+  setClientSideRouter(true)
   // show confirmation view before turning on
   const [showConfirmation, setShowConfirmation] = useState(false)
 
   useOnClickOutside(node, open ? toggle : undefined)
 
+  console.log('test router: ', clientSideRouter)
   return (
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/30451
     <StyledMenu ref={node as any}>
@@ -209,7 +210,7 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
             <Text fontWeight={600} fontSize={14}>
               <Trans>Interface Settings</Trans>
             </Text>
-            {isSupportedChainId(chainId) && (
+            {/* {isSupportedChainId(chainId) && (
               <RowBetween>
                 <RowFixed>
                   <ThemedText.DeprecatedBlack fontWeight={400} fontSize={14} color={theme.deprecated_text2}>
@@ -229,7 +230,7 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
                   }}
                 />
               </RowBetween>
-            )}
+            )} */}
             <RowBetween>
               <RowFixed>
                 <ThemedText.DeprecatedBlack fontWeight={400} fontSize={14} color={theme.deprecated_text2}>
@@ -247,13 +248,13 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
                 toggle={
                   expertMode
                     ? () => {
-                        toggleExpertMode()
-                        setShowConfirmation(false)
-                      }
+                      toggleExpertMode()
+                      setShowConfirmation(false)
+                    }
                     : () => {
-                        toggle()
-                        setShowConfirmation(true)
-                      }
+                      toggle()
+                      setShowConfirmation(true)
+                    }
                 }
               />
             </RowBetween>

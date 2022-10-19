@@ -155,16 +155,18 @@ export default function ConfirmSwapModal({
   }, [attemptingTxn, isOpen, txHash, trade, lastTxnHashLogged])
 
   return (
-    <Trace modal={ModalName.CONFIRM_SWAP}>
-      <TransactionConfirmationModal
-        isOpen={isOpen}
-        onDismiss={onModalDismiss}
-        attemptingTxn={attemptingTxn}
-        hash={txHash}
-        content={confirmationContent}
-        pendingText={pendingText}
-        currencyToAdd={trade?.outputAmount.currency}
-      />
-    </Trace>
+    <div style={{ backgroundColor: 'red' }}>
+      <Trace modal={ModalName.CONFIRM_SWAP}>
+        <TransactionConfirmationModal
+          isOpen={isOpen}
+          onDismiss={onModalDismiss}
+          attemptingTxn={attemptingTxn}
+          hash={txHash}
+          content={confirmationContent}
+          pendingText={pendingText}
+          currencyToAdd={trade?.outputAmount.currency}
+        />
+      </Trace>
+    </div>
   )
 }

@@ -18,12 +18,19 @@ export default function SwapHeader({ allowedSlippage }: { allowedSlippage: Perce
     <StyledSwapHeader>
       <RowBetween>
         <RowFixed>
-          <ThemedText.DeprecatedBlack fontWeight={500} fontSize={16} style={{ marginRight: '8px' }}>
-            <Trans>Swap</Trans>
+          <ThemedText.DeprecatedBlack fontWeight={500} fontSize={20} style={{ marginRight: '8px' }}>
+            <Trans>Exchange</Trans>
           </ThemedText.DeprecatedBlack>
         </RowFixed>
         <RowFixed>
           <SettingsTab placeholderSlippage={allowedSlippage} />
+        </RowFixed>
+      </RowBetween>
+      <RowBetween>
+        <RowFixed>
+          <ThemedText.DeprecatedBlack fontWeight={500} fontSize={12} style={{ marginRight: '8px' }}>
+            <Trans>Swap</Trans>
+          </ThemedText.DeprecatedBlack>
         </RowFixed>
       </RowBetween>
     </StyledSwapHeader>

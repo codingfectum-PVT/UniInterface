@@ -24,7 +24,7 @@ const BestPriceContainer = styled.div`
   padding: 12px;
   background-color: ${({ theme }) => theme.backgroundSurface};
   border: 1px solid ${({ theme }) => theme.backgroundOutline};
-  border-radius: 16px;
+  border-radius: 4px;
   width: 320px;
 `
 
@@ -51,7 +51,7 @@ const BuyNowButton = styled.div<{ assetInBag: boolean; margin: boolean; useAccen
   width: 100%;
   background-color: ${({ theme, assetInBag, useAccentColor }) =>
     assetInBag ? theme.accentFailure : useAccentColor ? theme.accentAction : theme.backgroundInteractive};
-  border-radius: 12px;
+  border-radius: 3px;
   padding: 10px 12px;
   margin-top: ${({ margin }) => (margin ? '12px' : '0px')};
   text-align: center;

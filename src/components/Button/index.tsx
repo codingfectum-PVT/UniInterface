@@ -7,7 +7,7 @@ import { RowBetween } from '../Row'
 
 type ButtonProps = Omit<ButtonPropsOriginal, 'css'>
 
-export const BaseButton = styled(RebassButton)<
+export const BaseButton = styled(RebassButton) <
   {
     padding?: string
     width?: string
@@ -50,7 +50,7 @@ export const BaseButton = styled(RebassButton)<
   }
 `
 
-export const ButtonPrimary = styled(BaseButton)<{ redesignFlag?: boolean }>`
+export const ButtonPrimary = styled(BaseButton) <{ redesignFlag?: boolean }>`
   background-color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.accentAction : theme.deprecated_primary1)};
   font-size: ${({ redesignFlag }) => redesignFlag && '20px'};
   font-weight: ${({ redesignFlag }) => redesignFlag && '600'};
@@ -69,9 +69,9 @@ export const ButtonPrimary = styled(BaseButton)<{ redesignFlag?: boolean }>`
   }
   &:disabled {
     background-color: ${({ theme, altDisabledStyle, disabled }) =>
-      altDisabledStyle ? (disabled ? theme.deprecated_primary1 : theme.deprecated_bg2) : theme.deprecated_bg2};
+    altDisabledStyle ? (disabled ? theme.deprecated_primary1 : theme.deprecated_bg2) : theme.deprecated_bg2};
     color: ${({ altDisabledStyle, disabled, theme }) =>
-      altDisabledStyle ? (disabled ? theme.deprecated_white : theme.deprecated_text2) : theme.deprecated_text2};
+    altDisabledStyle ? (disabled ? theme.deprecated_white : theme.deprecated_text2) : theme.deprecated_text2};
     cursor: auto;
     box-shadow: none;
     border: 1px solid transparent;
@@ -79,7 +79,7 @@ export const ButtonPrimary = styled(BaseButton)<{ redesignFlag?: boolean }>`
   }
 `
 
-export const ButtonLight = styled(BaseButton)<{ redesignFlag?: boolean }>`
+export const ButtonLight = styled(BaseButton) <{ redesignFlag?: boolean }>`
   background-color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.accentActionSoft : theme.deprecated_primary5)};
   color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.accentAction : theme.deprecated_primaryText1)};
   font-size: ${({ redesignFlag }) => (redesignFlag ? '20px' : '16px')};
@@ -88,20 +88,20 @@ export const ButtonLight = styled(BaseButton)<{ redesignFlag?: boolean }>`
   &:focus {
     box-shadow: 0 0 0 1pt
       ${({ theme, disabled, redesignFlag }) =>
-        !disabled && (redesignFlag ? theme.accentActionSoft : darken(0.03, theme.deprecated_primary5))};
+    !disabled && (redesignFlag ? theme.accentActionSoft : darken(0.03, theme.deprecated_primary5))};
     background-color: ${({ theme, disabled, redesignFlag }) =>
-      !disabled && (redesignFlag ? theme.accentActionSoft : darken(0.03, theme.deprecated_primary5))};
+    !disabled && (redesignFlag ? theme.accentActionSoft : darken(0.03, theme.deprecated_primary5))};
   }
   &:hover {
     background-color: ${({ theme, disabled, redesignFlag }) =>
-      !disabled && (redesignFlag ? theme.accentActionSoft : darken(0.03, theme.deprecated_primary5))};
+    !disabled && (redesignFlag ? theme.accentActionSoft : darken(0.03, theme.deprecated_primary5))};
   }
   &:active {
     box-shadow: 0 0 0 1pt
       ${({ theme, disabled, redesignFlag }) =>
-        !disabled && (redesignFlag ? theme.accentActionSoft : darken(0.05, theme.deprecated_primary5))};
+    !disabled && (redesignFlag ? theme.accentActionSoft : darken(0.05, theme.deprecated_primary5))};
     background-color: ${({ theme, disabled, redesignFlag }) =>
-      !disabled && (redesignFlag ? theme.accentActionSoft : darken(0.05, theme.deprecated_primary5))};
+    !disabled && (redesignFlag ? theme.accentActionSoft : darken(0.05, theme.deprecated_primary5))};
   }
   :disabled {
     opacity: 0.4;
@@ -134,7 +134,7 @@ export const ButtonSecondary = styled(BaseButton)`
   color: ${({ theme }) => theme.deprecated_primary1};
   background-color: transparent;
   font-size: 16px;
-  border-radius: 12px;
+  border-radius: 3px;
   padding: ${({ padding }) => (padding ? padding : '10px')};
 
   &:focus {
@@ -176,13 +176,13 @@ export const ButtonOutlined = styled(BaseButton)`
   }
 `
 
-export const ButtonYellow = styled(BaseButton)<{ redesignFlag?: boolean }>`
+export const ButtonYellow = styled(BaseButton) <{ redesignFlag?: boolean }>`
   background-color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.accentWarningSoft : theme.deprecated_yellow3)};
   color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.accentWarning : 'white')};
   &:focus {
     box-shadow: ${({ theme, redesignFlag }) => !redesignFlag && `0 0 0 1pt ${theme.deprecated_yellow3}`};
     background-color: ${({ theme, redesignFlag }) =>
-      redesignFlag ? theme.accentWarningSoft : darken(0.05, theme.deprecated_yellow3)};
+    redesignFlag ? theme.accentWarningSoft : darken(0.05, theme.deprecated_yellow3)};
   }
   &:hover {
     background: ${({ theme, redesignFlag }) => redesignFlag && theme.stateOverlayHover};
@@ -192,11 +192,11 @@ export const ButtonYellow = styled(BaseButton)<{ redesignFlag?: boolean }>`
   &:active {
     box-shadow: ${({ theme, redesignFlag }) => !redesignFlag && `0 0 0 1pt ${darken(0.1, theme.deprecated_yellow3)}`};
     background-color: ${({ theme, redesignFlag }) =>
-      redesignFlag ? theme.accentWarningSoft : darken(0.1, theme.deprecated_yellow3)};
+    redesignFlag ? theme.accentWarningSoft : darken(0.1, theme.deprecated_yellow3)};
   }
   &:disabled {
     background-color: ${({ theme, redesignFlag }) =>
-      redesignFlag ? theme.accentWarningSoft : theme.deprecated_yellow3};
+    redesignFlag ? theme.accentWarningSoft : theme.deprecated_yellow3};
     opacity: ${({ redesignFlag }) => (redesignFlag ? '60%' : '50%')};
     cursor: auto;
   }

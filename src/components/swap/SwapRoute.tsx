@@ -23,16 +23,16 @@ import { Separator, ThemedText } from 'theme'
 
 import { AutoRouterLabel, AutoRouterLogo } from './RouterLabel'
 
-const Wrapper = styled(AutoColumn)<{ darkMode?: boolean; fixedOpen?: boolean; redesignFlag: boolean }>`
+const Wrapper = styled(AutoColumn) <{ darkMode?: boolean; fixedOpen?: boolean; redesignFlag: boolean }>`
   padding: ${({ fixedOpen }) => (fixedOpen ? '12px' : '12px 8px 12px 12px')};
-  border-radius: 16px;
+  border-radius: 4px;
   border: 1px solid
     ${({ theme, fixedOpen, redesignFlag }) =>
-      fixedOpen ? 'transparent' : redesignFlag ? theme.backgroundOutline : theme.deprecated_bg2};
+    fixedOpen ? 'transparent' : redesignFlag ? theme.backgroundOutline : theme.deprecated_bg2};
   cursor: pointer;
 `
 
-const OpenCloseIcon = styled(Plus)<{ open?: boolean }>`
+const OpenCloseIcon = styled(Plus) <{ open?: boolean }>`
   margin-left: 8px;
   height: 20px;
   stroke-width: 2px;

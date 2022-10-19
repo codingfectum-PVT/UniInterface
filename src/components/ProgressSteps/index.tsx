@@ -12,7 +12,7 @@ const Grouping = styled(AutoColumn)`
   width: fit-content;
   padding: 4px;
   /* background-color: ${({ theme }) => theme.deprecated_bg2}; */
-  border-radius: 16px;
+  border-radius: 4px;
 `
 
 const Circle = styled.div<{ confirmed?: boolean; disabled?: boolean }>`

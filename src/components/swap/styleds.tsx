@@ -26,7 +26,7 @@ export const PageWrapper = styled.div<{ redesignFlag: boolean; navBarFlag: boole
 export const SwapWrapper = styled.main<{ margin?: string; maxWidth?: string; redesignFlag: boolean }>`
   position: relative;
   background: ${({ theme, redesignFlag }) => (redesignFlag ? theme.backgroundSurface : theme.deprecated_bg0)};
-  border-radius: ${({ redesignFlag }) => (redesignFlag ? '16px' : '24px')};
+  border-radius: 4px;
   border: 1px solid ${({ theme, redesignFlag }) => (redesignFlag ? theme.backgroundOutline : 'transparent')};
   padding: 8px;
   z-index: ${Z_INDEX.deprecated_content};
@@ -36,11 +36,10 @@ export const SwapWrapper = styled.main<{ margin?: string; maxWidth?: string; red
 `
 
 export const ArrowWrapper = styled.div<{ clickable: boolean; redesignFlag: boolean }>`
-  border-radius: 12px;
+  border-radius: 3px;
   height: ${({ redesignFlag }) => (redesignFlag ? '40px' : '32px')};
   width: ${({ redesignFlag }) => (redesignFlag ? '40px' : '32px')};
   position: relative;
-  margin-top: ${({ redesignFlag }) => (redesignFlag ? '-18px' : '-14px')};
   margin-bottom: ${({ redesignFlag }) => (redesignFlag ? '-18px' : '-14px')};
   margin-left: auto;
   margin-right: auto;
@@ -66,15 +65,15 @@ export const SectionBreak = styled.div`
   background-color: ${({ theme }) => theme.deprecated_bg3};
 `
 
-export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
+export const ErrorText = styled(Text) <{ severity?: 0 | 1 | 2 | 3 | 4 }>`
   color: ${({ theme, severity }) =>
     severity === 3 || severity === 4
       ? theme.deprecated_red1
       : severity === 2
-      ? theme.deprecated_yellow2
-      : severity === 1
-      ? theme.deprecated_text1
-      : theme.deprecated_text2};
+        ? theme.deprecated_yellow2
+        : severity === 1
+          ? theme.deprecated_text1
+          : theme.deprecated_text2};
 `
 
 export const TruncatedText = styled(Text)`
@@ -130,7 +129,7 @@ const SwapCallbackErrorInnerAlertTriangle = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 12px;
-  border-radius: 12px;
+  border-radius: 3px;
   min-width: 48px;
   height: 48px;
 `
@@ -150,11 +149,11 @@ export const SwapShowAcceptChanges = styled(AutoColumn)`
   background-color: ${({ theme }) => transparentize(0.95, theme.deprecated_primary3)};
   color: ${({ theme }) => theme.deprecated_primaryText1};
   padding: 0.5rem;
-  border-radius: 12px;
+  border-radius: 3px;
   margin-top: 8px;
 `
 
-export const ResponsiveTooltipContainer = styled(TooltipContainer)<{ origin?: string; width?: string }>`
+export const ResponsiveTooltipContainer = styled(TooltipContainer) <{ origin?: string; width?: string }>`
   background-color: ${({ theme }) => theme.deprecated_bg0};
   border: 1px solid ${({ theme }) => theme.deprecated_bg2};
   padding: 1rem;

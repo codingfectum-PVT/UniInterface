@@ -30,7 +30,7 @@ const ProfileDetailsSkeleton = styled.div`
   width: 180px;
   height: 36px;
   background: ${({ theme }) => theme.backgroundModule};
-  border-radius: 12px;
+  border-radius: 3px;
 `
 
 const FilterBarSkeletonWrapper = styled(SkeletonRowWrapper)`
@@ -41,14 +41,14 @@ const FilterButtonSkeleton = styled.div`
   width: 92px;
   height: 44px;
   background: ${({ theme }) => theme.backgroundModule};
-  border-radius: 12px;
+  border-radius: 3px;
 `
 
 const SellButtonSkeleton = styled.div`
   width: 80px;
   height: 44px;
   background: ${({ theme }) => theme.backgroundModule};
-  border-radius: 12px;
+  border-radius: 3px;
 `
 
 export const ProfileAssetsWrapperSkeleton = styled(SkeletonRowWrapper)`

@@ -6,7 +6,7 @@ const FilterOption = styled.button<{ active: boolean; highlight?: boolean }>`
   background-color: ${({ theme, active }) => (active ? theme.accentActiveSoft : theme.backgroundInteractive)};
   margin: 0;
   padding: 6px 12px 6px 14px;
-  border-radius: 12px;
+  border-radius: 3px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;

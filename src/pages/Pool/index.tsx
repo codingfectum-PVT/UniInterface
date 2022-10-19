@@ -25,7 +25,7 @@ import { V2_FACTORY_ADDRESSES } from '../../constants/addresses'
 import CTACards from './CTACards'
 import { LoadingRows } from './styleds'
 
-const PageWrapper = styled(AutoColumn)<{ navBarFlag: boolean }>`
+const PageWrapper = styled(AutoColumn) <{ navBarFlag: boolean }>`
   padding: ${({ navBarFlag }) => (navBarFlag ? '68px 8px 0px' : '0px')};
   max-width: 870px;
   width: 100%;
@@ -86,7 +86,7 @@ const MenuItem = styled.div`
   font-weight: 500;
 `
 const MoreOptionsButton = styled(ButtonGray)`
-  border-radius: 12px;
+  border-radius: 3px;
   flex: 1 1 auto;
   padding: 6px 8px;
   width: 100%;
@@ -124,7 +124,7 @@ const InboxIcon = styled(Inbox)`
 `
 
 const ResponsiveButtonPrimary = styled(ButtonPrimary)`
-  border-radius: 12px;
+  border-radius: 3px;
   padding: 6px 8px;
   width: fit-content;
   ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`

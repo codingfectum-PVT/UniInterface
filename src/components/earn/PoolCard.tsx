@@ -31,15 +31,14 @@ const StatContainer = styled.div`
 `};
 `
 
-const Wrapper = styled(AutoColumn)<{ showBackground: boolean; bgColor: any }>`
-  border-radius: 12px;
+const Wrapper = styled(AutoColumn) <{ showBackground: boolean; bgColor: any }>`
+  border-radius: 3px;
   width: 100%;
   overflow: hidden;
   position: relative;
   opacity: ${({ showBackground }) => (showBackground ? '1' : '1')};
   background: ${({ theme, bgColor, showBackground }) =>
-    `radial-gradient(91.85% 100% at 1.84% 0%, ${bgColor} 0%, ${
-      showBackground ? theme.deprecated_black : theme.deprecated_bg5
+    `radial-gradient(91.85% 100% at 1.84% 0%, ${bgColor} 0%, ${showBackground ? theme.deprecated_black : theme.deprecated_bg5
     } 100%) `};
   color: ${({ theme, showBackground }) =>
     showBackground ? theme.deprecated_white : theme.deprecated_text1} !important;

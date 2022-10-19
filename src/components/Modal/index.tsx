@@ -10,7 +10,7 @@ import { isMobile } from '../../utils/userAgent'
 
 const AnimatedDialogOverlay = animated(DialogOverlay)
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const StyledDialogOverlay = styled(AnimatedDialogOverlay)<{ redesignFlag?: boolean; scrollOverlay?: boolean }>`
+const StyledDialogOverlay = styled(AnimatedDialogOverlay) <{ redesignFlag?: boolean; scrollOverlay?: boolean }>`
   &[data-reach-dialog-overlay] {
     z-index: ${Z_INDEX.modalBackdrop};
     background-color: transparent;
@@ -38,9 +38,9 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, rede
   &[data-reach-dialog-content] {
     margin: ${({ redesignFlag }) => (redesignFlag ? 'auto' : '0 0 2rem 0')};
     background-color: ${({ theme }) => theme.deprecated_bg0};
-    border: 1px solid ${({ theme }) => theme.deprecated_bg1};
+    border: 1px solid ${({ theme }) => theme.accentAction};
     box-shadow: ${({ theme, redesignFlag }) =>
-      redesignFlag ? theme.deepShadow : `0 4px 8px 0 ${transparentize(0.95, theme.shadow1)}`};
+    redesignFlag ? theme.deepShadow : `0 4px 8px 0 ${transparentize(0.95, theme.shadow1)}`};
     padding: 0px;
     width: 50vw;
     overflow-y: auto;
@@ -50,32 +50,31 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, rede
 
     max-width: 420px;
     ${({ maxHeight }) =>
-      maxHeight &&
-      css`
+    maxHeight &&
+    css`
         max-height: ${maxHeight}vh;
       `}
     ${({ minHeight }) =>
-      minHeight &&
-      css`
+    minHeight &&
+    css`
         min-height: ${minHeight}vh;
       `}
     display: ${({ scrollOverlay }) => (scrollOverlay ? 'inline-table' : 'flex')};
-    border-radius: 20px;
+    border-radius: 5px;
     ${({ theme, redesignFlag }) => theme.deprecated_mediaWidth.deprecated_upToMedium`
       width: 65vw;
       margin: ${redesignFlag ? 'auto' : '0'};
     `}
     ${({ theme, mobile }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
       width:  85vw;
-      ${
-        mobile &&
-        css`
+      ${mobile &&
+    css`
           width: 100vw;
           border-radius: 20px;
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0;
         `
-      }
+    }
     `}
   }
 `
@@ -137,9 +136,9 @@ export default function Modal({
               <StyledDialogContent
                 {...(isMobile
                   ? {
-                      ...bind(),
-                      style: { transform: y.interpolate((y) => `translateY(${(y as number) > 0 ? y : 0}px)`) },
-                    }
+                    ...bind(),
+                    style: { transform: y.interpolate((y) => `translateY(${(y as number) > 0 ? y : 0}px)`) },
+                  }
                   : {})}
                 aria-label="dialog content"
                 minHeight={minHeight}

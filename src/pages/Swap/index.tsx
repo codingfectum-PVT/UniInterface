@@ -88,9 +88,6 @@ const SwapSection = styled.div<{ redesignFlag: boolean }>`
   ${({ redesignFlag }) =>
     redesignFlag &&
     css`
-      background-color: ${({ theme }) => theme.backgroundModule};
-      border-radius: 12px;
-      padding: 16px;
       color: ${({ theme }) => theme.textSecondary};
       font-size: 14px;
       line-height: 20px;
@@ -109,7 +106,6 @@ const SwapSection = styled.div<{ redesignFlag: boolean }>`
         height: 100%;
         pointer-events: none;
         content: '';
-        border: 1px solid ${({ theme }) => theme.backgroundModule};
       }
 
       &:hover:before {
@@ -122,7 +118,7 @@ const SwapSection = styled.div<{ redesignFlag: boolean }>`
     `}
 `
 
-const OutputSwapSection = styled(SwapSection)<{ showDetailsDropdown: boolean }>`
+const OutputSwapSection = styled(SwapSection) <{ showDetailsDropdown: boolean }>`
   border-bottom: ${({ theme, redesignFlag }) => redesignFlag && `1px solid ${theme.backgroundSurface}`};
   border-bottom-left-radius: ${({ redesignFlag, showDetailsDropdown }) => redesignFlag && showDetailsDropdown && '0'};
   border-bottom-right-radius: ${({ redesignFlag, showDetailsDropdown }) => redesignFlag && showDetailsDropdown && '0'};
@@ -255,13 +251,13 @@ export default function Swap() {
     () =>
       showWrap
         ? {
-            [Field.INPUT]: parsedAmount,
-            [Field.OUTPUT]: parsedAmount,
-          }
+          [Field.INPUT]: parsedAmount,
+          [Field.OUTPUT]: parsedAmount,
+        }
         : {
-            [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
-            [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
-          },
+          [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
+          [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount,
+        },
     [independentField, parsedAmount, showWrap, trade]
   )
 
@@ -411,8 +407,8 @@ export default function Swap() {
             recipient === null
               ? 'Swap w/o Send'
               : (recipientAddress ?? recipient) === account
-              ? 'Swap w/o Send + recipient'
-              : 'Swap w/ Send',
+                ? 'Swap w/o Send + recipient'
+                : 'Swap w/ Send',
           label: [TRADE_STRING, trade?.inputAmount?.currency?.symbol, trade?.outputAmount?.currency?.symbol, 'MH'].join(
             '/'
           ),
@@ -730,7 +726,7 @@ export default function Swap() {
                           <span style={{ display: 'flex', alignItems: 'center' }}>
                             {/* we need to shorten this string on mobile */}
                             {approvalState === ApprovalState.APPROVED ||
-                            signatureState === UseERC20PermitState.SIGNED ? (
+                              signatureState === UseERC20PermitState.SIGNED ? (
                               <Trans>You can now trade {currencies[Field.INPUT]?.symbol}</Trans>
                             ) : (
                               <Trans>Allow the Uniswap Protocol to use your {currencies[Field.INPUT]?.symbol}</Trans>

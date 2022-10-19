@@ -27,7 +27,7 @@ const ExploreNFTsButton = styled.button`
   width: min-content;
   border: none;
   outline: none;
-  border-radius: 12px;
+  border-radius: 3px;
   white-space: nowrap;
   cursor: pointer;
   margin-top: 20px;

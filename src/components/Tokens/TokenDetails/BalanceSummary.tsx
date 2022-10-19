@@ -13,7 +13,7 @@ const BalancesCard = styled.div`
   box-shadow: ${({ theme }) => theme.shallowShadow};
   background-color: ${({ theme }) => theme.backgroundSurface};
   border: ${({ theme }) => `1px solid ${theme.backgroundOutline}`};
-  border-radius: 16px;
+  border-radius: 4px;
   color: ${({ theme }) => theme.textPrimary};
   display: none;
   font-size: 12px;

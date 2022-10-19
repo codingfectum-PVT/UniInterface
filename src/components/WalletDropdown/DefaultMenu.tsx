@@ -13,7 +13,7 @@ import AuthenticatedHeader from './AuthenticatedHeader'
 import { MenuState } from './index'
 
 const ConnectButton = styled(ButtonPrimary)`
-  border-radius: 12px;
+  border-radius: 3px;
   height: 44px;
   width: 288px;
   font-weight: 600;
@@ -39,7 +39,7 @@ const ToggleMenuItem = styled.button`
   cursor: pointer;
   display: flex;
   flex: 1;
-  border-radius: 12px;
+  border-radius: 3px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -52,10 +52,10 @@ const ToggleMenuItem = styled.button`
     color: ${({ theme }) => theme.textPrimary};
     background-color: ${({ theme }) => theme.backgroundModule};
     transition: ${({
-      theme: {
-        transition: { duration, timing },
-      },
-    }) => `${duration.fast} all ${timing.in}`};
+  theme: {
+    transition: { duration, timing },
+  },
+}) => `${duration.fast} all ${timing.in}`};
   }
 `
 

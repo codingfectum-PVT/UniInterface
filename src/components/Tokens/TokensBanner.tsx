@@ -25,7 +25,7 @@ const PopupContainer = styled.div<{ show: boolean }>`
   background-color: ${({ theme }) => (theme.darkMode ? theme.backgroundScrim : opacify(60, '#FDF0F8'))};
   color: ${({ theme }) => theme.textPrimary};
   border: 1px solid ${({ theme }) => theme.backgroundOutline};
-  border-radius: 12px;
+  border-radius: 3px;
   box-shadow: ${({ theme }) => theme.deepShadow};
 
   background-image: url(${({ theme }) => (theme.darkMode ? `${tokensPromoDark}` : `${tokensPromoLight}`)});
@@ -33,10 +33,10 @@ const PopupContainer = styled.div<{ show: boolean }>`
   background-blend-mode: overlay;
 
   transition: ${({
-    theme: {
-      transition: { duration, timing },
-    },
-  }) => `${duration.slow} opacity ${timing.in}`};
+  theme: {
+    transition: { duration, timing },
+  },
+}) => `${duration.slow} opacity ${timing.in}`};
 `
 const Header = styled.div`
   display: flex;

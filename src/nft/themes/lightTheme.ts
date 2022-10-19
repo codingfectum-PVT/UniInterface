@@ -13,7 +13,7 @@ export const lightTheme: Theme = {
     backgroundInteractive: vars.color.grey100,
     backgroundModule: vars.color.grey50,
     backgroundOutline: `rgba(94,104,135,0.24)`,
-    backgroundSurface: '#FFFFFF',
+    backgroundSurface: '#000000',
 
     modalBackdrop: 'rgba(0, 0, 0, 0.3)',
 

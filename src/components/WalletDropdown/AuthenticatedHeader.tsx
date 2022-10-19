@@ -26,7 +26,7 @@ import StatusIcon from '../Identicon/StatusIcon'
 import IconButton, { IconHoverText } from './IconButton'
 
 const WalletButton = styled(ButtonPrimary)`
-  border-radius: 12px;
+  border-radius: 3px;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 12px;

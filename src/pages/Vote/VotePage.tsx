@@ -56,7 +56,7 @@ import { isAddress } from '../../utils'
 import { ExplorerDataType, getExplorerLink } from '../../utils/getExplorerLink'
 import { ProposalStatus } from './styled'
 
-const PageWrapper = styled(AutoColumn)<{ navBarFlag: boolean }>`
+const PageWrapper = styled(AutoColumn) <{ navBarFlag: boolean }>`
   padding-top: ${({ navBarFlag }) => (navBarFlag ? '68px' : '0px')};
   width: 100%;
 
@@ -71,7 +71,7 @@ const PageWrapper = styled(AutoColumn)<{ navBarFlag: boolean }>`
 
 const ProposalInfo = styled(AutoColumn)`
   background: ${({ theme }) => theme.deprecated_bg0};
-  border-radius: 12px;
+  border-radius: 3px;
   padding: 1.5rem;
   position: relative;
   max-width: 640px;

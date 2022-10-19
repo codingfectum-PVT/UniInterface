@@ -33,7 +33,7 @@ import { ZERO_ADDRESS } from '../../constants/misc'
 import { UNI } from '../../constants/tokens'
 import { ProposalStatus } from './styled'
 
-const PageWrapper = styled(AutoColumn)<{ navBarFlag: boolean }>`
+const PageWrapper = styled(AutoColumn) <{ navBarFlag: boolean }>`
   padding-top: ${({ navBarFlag }) => (navBarFlag ? '68px' : '0px')};
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
@@ -54,7 +54,7 @@ const Proposal = styled(Button)`
   padding: 0.75rem 1rem;
   width: 100%;
   margin-top: 1rem;
-  border-radius: 12px;
+  border-radius: 3px;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -35,7 +35,7 @@ const SellModeButton = styled.button<{ active: boolean }>`
   justify-content: center;
   align-items: center;
   padding: 10px 12px;
-  border-radius: 12px;
+  border-radius: 3px;
   gap: 8px;
   cursor: pointer;
   background-color: ${({ theme, active }) => (active ? theme.accentAction : theme.backgroundInteractive)};
@@ -229,8 +229,8 @@ export const ProfilePage = () => {
                   <div className={assetList}>
                     {displayAssets && displayAssets.length
                       ? displayAssets.map((asset, index) => (
-                          <WalletAssetDisplay asset={asset} isSellMode={isSellMode} key={index} />
-                        ))
+                        <WalletAssetDisplay asset={asset} isSellMode={isSellMode} key={index} />
+                      ))
                       : null}
                   </div>
                 </InfiniteScroll>

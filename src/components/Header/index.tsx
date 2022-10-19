@@ -91,7 +91,7 @@ const HeaderLinks = styled(Row)`
   background-color: ${({ theme }) => theme.deprecated_bg0};
   width: max-content;
   padding: 2px;
-  border-radius: 16px;
+  border-radius: 4px;
   display: grid;
   grid-auto-flow: column;
   grid-gap: 10px;
@@ -123,7 +123,7 @@ const AccountElement = styled.div<{ active: boolean }>`
   flex-direction: row;
   align-items: center;
   background-color: ${({ theme, active }) => (!active ? theme.deprecated_bg0 : theme.deprecated_bg0)};
-  border-radius: 16px;
+  border-radius: 4px;
   white-space: nowrap;
   width: 100%;
   height: 40px;

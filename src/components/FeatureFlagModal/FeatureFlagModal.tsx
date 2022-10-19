@@ -21,7 +21,7 @@ const StyledModal = styled.div`
   font-size: 18px;
   padding: 20px;
   background-color: ${({ theme }) => theme.backgroundSurface};
-  border-radius: 12px;
+  border-radius: 3px;
   border: 1px solid ${({ theme }) => theme.backgroundOutline};
   z-index: 100;
   flex-direction: column;
@@ -79,7 +79,7 @@ const FlagDescription = styled.span`
   align-items: center;
 `
 const FlagVariantSelection = styled.select`
-  border-radius: 12px;
+  border-radius: 3px;
   padding: 8px;
   background: ${({ theme }) => theme.backgroundInteractive};
   font-weight: 600;
@@ -100,7 +100,7 @@ const FlagInfo = styled.div`
 `
 
 const SaveButton = styled.button`
-  border-radius: 12px;
+  border-radius: 3px;
   padding: 8px;
   background: ${({ theme }) => theme.backgroundInteractive};
   font-weight: 600;

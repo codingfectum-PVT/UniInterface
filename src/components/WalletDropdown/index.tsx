@@ -9,7 +9,7 @@ import LanguageMenu from './LanguageMenu'
 import { TransactionHistoryMenu } from './TransactionMenu'
 
 const WalletWrapper = styled.div`
-  border-radius: 12px;
+  border-radius: 3px;
   width: 320px;
   display: flex;
   flex-direction: column;

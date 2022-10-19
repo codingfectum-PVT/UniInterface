@@ -56,7 +56,7 @@ const StyledMenuButton = styled.button`
   background-color: ${({ theme }) => theme.deprecated_bg0};
   border: 1px solid ${({ theme }) => theme.deprecated_bg0};
   padding: 0.15rem 0.5rem;
-  border-radius: 16px;
+  border-radius: 4px;
 
   :hover,
   :focus {
@@ -93,7 +93,7 @@ const MenuFlyout = styled.span<{ flyoutAlignment?: FlyoutAlignment }>`
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
     0px 24px 32px rgba(0, 0, 0, 0.01);
   border: 1px solid ${({ theme }) => theme.deprecated_bg0};
-  border-radius: 12px;
+  border-radius: 3px;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;

@@ -15,7 +15,7 @@ export const IconHoverText = styled.span`
 
 const IconStyles = css`
   background-color: ${({ theme }) => theme.backgroundInteractive};
-  border-radius: 12px;
+  border-radius: 3px;
   display: inline-block;
   cursor: pointer;
   position: relative;
@@ -25,10 +25,10 @@ const IconStyles = css`
   :hover {
     background-color: ${({ theme }) => theme.hoverState};
     transition: ${({
-      theme: {
-        transition: { duration, timing },
-      },
-    }) => `${duration.fast} background-color ${timing.in}`};
+  theme: {
+    transition: { duration, timing },
+  },
+}) => `${duration.fast} background-color ${timing.in}`};
 
     ${IconHoverText} {
       opacity: 1;
@@ -61,8 +61,8 @@ const IconWrapper = styled.span`
 interface BaseProps {
   Icon: Icon
 }
-interface IconLinkProps extends React.ComponentPropsWithoutRef<'a'>, BaseProps {}
-interface IconButtonProps extends React.ComponentPropsWithoutRef<'button'>, BaseProps {}
+interface IconLinkProps extends React.ComponentPropsWithoutRef<'a'>, BaseProps { }
+interface IconButtonProps extends React.ComponentPropsWithoutRef<'button'>, BaseProps { }
 
 const IconBlock = (props: React.ComponentPropsWithoutRef<'a' | 'button'>) => {
   if ('href' in props) {

@@ -13,7 +13,7 @@ const InfoCard = styled.button<{ isActive?: boolean; redesignFlag?: boolean }>`
   padding: 1rem;
   outline: none;
   border: 1px solid;
-  border-radius: 12px;
+  border-radius: 3px;
   width: 100% !important;
   &:focus {
     box-shadow: ${({ theme, redesignFlag }) => !redesignFlag && `0 0 0 1px ${theme.deprecated_primary1}`};
@@ -50,7 +50,7 @@ const OptionCardLeft = styled.div`
   height: 100%;
 `
 
-const OptionCardClickable = styled(OptionCard as any)<{
+const OptionCardClickable = styled(OptionCard as any) <{
   active?: boolean
   clickable?: boolean
   redesignFlag?: boolean
@@ -61,7 +61,7 @@ const OptionCardClickable = styled(OptionCard as any)<{
     cursor: ${({ clickable }) => clickable && 'pointer'};
     background-color: ${({ theme, redesignFlag }) => redesignFlag && theme.hoverState};
     border: ${({ clickable, redesignFlag, theme }) =>
-      clickable && !redesignFlag && `1px solid ${theme.deprecated_primary1}`};
+    clickable && !redesignFlag && `1px solid ${theme.deprecated_primary1}`};
   }
   opacity: ${({ disabled }) => (disabled ? '0.5' : '1')};
 `

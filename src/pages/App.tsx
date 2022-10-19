@@ -57,14 +57,18 @@ const AppWrapper = styled.div<{ redesignFlagEnabled: boolean }>`
   align-items: flex-start;
   font-feature-settings: ${({ redesignFlagEnabled }) =>
     redesignFlagEnabled ? undefined : "'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on"};
+  height: 100vh;
+  align-items: center;
 `
 
 const BodyWrapper = styled.div<{ navBarFlag: NavBarVariant }>`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100%;  
+  max-width: 1300px;
   padding: ${({ navBarFlag }) => (navBarFlag === NavBarVariant.Enabled ? `72px 0px 0px 0px` : `120px 0px 0px 0px`)};
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   flex: 1;
   ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
     padding: 52px 0px 16px 0px;
@@ -77,6 +81,7 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   position: fixed;
   top: 0;
+  background-color: rgb(20, 18, 14);
   z-index: ${Z_INDEX.sticky};
 `
 

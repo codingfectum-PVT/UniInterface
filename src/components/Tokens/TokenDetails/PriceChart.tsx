@@ -96,7 +96,7 @@ export const TimeOptionsContainer = styled.div`
   margin-top: 4px;
   gap: 4px;
   border: 1px solid ${({ theme }) => theme.backgroundOutline};
-  border-radius: 16px;
+  border-radius: 4px;
   height: 40px;
   padding: 4px;
   width: fit-content;
@@ -116,7 +116,7 @@ const TimeButton = styled.button<{ active: boolean }>`
   font-weight: 600;
   font-size: 16px;
   padding: 6px 12px;
-  border-radius: 12px;
+  border-radius: 3px;
   line-height: 20px;
   border: none;
   cursor: pointer;

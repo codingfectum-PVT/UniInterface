@@ -40,7 +40,7 @@ const TitleText = styled.div<{ redesignFlag?: boolean }>`
 `
 const Wrapper = styled.div<{ redesignFlag?: boolean }>`
   background-color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.backgroundSurface : theme.deprecated_yellow3)};
-  border-radius: 12px;
+  border-radius: 3px;
   border: 1px solid ${({ theme }) => theme.backgroundOutline};
   bottom: 60px;
   display: none;

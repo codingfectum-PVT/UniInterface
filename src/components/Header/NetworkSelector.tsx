@@ -133,7 +133,7 @@ const SelectorControls = styled.div<{ supportedChain: boolean }>`
   align-items: center;
   background-color: ${({ theme }) => theme.deprecated_bg0};
   border: 2px solid ${({ theme }) => theme.deprecated_bg0};
-  border-radius: 16px;
+  border-radius: 4px;
   color: ${({ theme }) => theme.deprecated_text1};
   display: flex;
   font-weight: 500;

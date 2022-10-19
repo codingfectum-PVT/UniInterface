@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 
 const ToggleWrapper = styled(RowBetween)`
   background-color: ${({ theme }) => theme.deprecated_bg3};
-  border-radius: 12px;
+  border-radius: 3px;
   padding: 6px;
 `
 
@@ -32,7 +32,7 @@ const ToggleOption = styled.div<{ active?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 3px;
   font-weight: 600;
   background-color: ${({ theme, active }) => (active ? theme.deprecated_bg1 : theme.deprecated_bg3)};
   color: ${({ theme, active }) => (active ? theme.deprecated_text1 : theme.deprecated_text2)};

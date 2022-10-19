@@ -23,7 +23,7 @@ const ShareButtonDisplay = styled.div`
   position: relative;
 `
 
-const Share = styled(ShareIcon)<{ open: boolean }>`
+const Share = styled(ShareIcon) <{ open: boolean }>`
   stroke: ${({ theme }) => theme.textSecondary};
   height: 24px;
   width: 24px;
@@ -45,7 +45,7 @@ const ShareActions = styled.div`
   background-color: ${({ theme }) => theme.backgroundSurface};
   border: 0.5px solid ${({ theme }) => theme.backgroundOutline};
   box-shadow: ${({ theme }) => theme.deepShadow};
-  border-radius: 12px;
+  border-radius: 3px;
 `
 const ShareAction = styled.div`
   display: flex;

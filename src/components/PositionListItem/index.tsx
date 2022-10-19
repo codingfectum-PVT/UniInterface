@@ -80,7 +80,7 @@ const RangeLineItem = styled(DataLineItem)`
 
   ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
   background-color: ${({ theme }) => theme.deprecated_bg2};
-    border-radius: 12px;
+    border-radius: 3px;
     padding: 8px 0;
 `};
 `

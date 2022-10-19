@@ -20,6 +20,7 @@ const FallbackWrapper = styled.div`
 const BodyWrapper = styled.div<{ margin?: string }>`
   padding: 1rem;
   width: 100%;
+
 `
 
 const CodeBlockWrapper = styled.div`
@@ -170,42 +171,38 @@ function issueBody(error: Error): string {
   
 ${window.location.href}
 
-${
-  relevantState
-    ? `## \`${relevantState}\` state
+${relevantState
+      ? `## \`${relevantState}\` state
     
 \`\`\`json
 ${JSON.stringify(store.getState()[relevantState], null, 2)}
 \`\`\`
 `
-    : ''
-}
-${
-  error.name &&
-  `## Error
+      : ''
+    }
+${error.name &&
+    `## Error
 
 \`\`\`
 ${error.name}${error.message && `: ${error.message}`}
 \`\`\`
 `
-}
-${
-  error.stack &&
-  `## Stacktrace
+    }
+${error.stack &&
+    `## Stacktrace
 
 \`\`\`
 ${error.stack}
 \`\`\`
 `
-}
-${
-  deviceData &&
-  `## Device data
+    }
+${deviceData &&
+    `## Device data
 
 \`\`\`json
 ${JSON.stringify(deviceData, null, 2)}
 \`\`\`
 `
-}
+    }
 `
 }
