@@ -30,8 +30,8 @@ import { CurrencyRow, formatAnalyticsEventProperties } from './CurrencyList'
 import CurrencyList from './CurrencyList'
 import { PaddedColumn, SearchInput, Separator } from './styleds'
 
-const ContentWrapper = styled(Column)<{ redesignFlag?: boolean }>`
-  background-color: ${({ theme, redesignFlag }) => redesignFlag && theme.backgroundSurface};
+const ContentWrapper = styled(Column) <{ redesignFlag?: boolean }>`
+  background-color: black;
   width: 100%;
   flex: 1 1;
   position: relative;

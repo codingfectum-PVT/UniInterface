@@ -147,9 +147,8 @@ const InputRow = styled.div<{ selected: boolean; redesignFlag: boolean }>`
   align-items: center;
   margin-top: 5px;
   border-radius: 3px;
-  border: 1px solid ${({ theme, redesignFlag }) =>
-    redesignFlag ? theme.accentAction : theme.deprecated_bg2};
   justify-content: space-between;
+  background: #1e1e1e;
 `
 
 const LabelRow = styled.div<{ redesignFlag: boolean }>`

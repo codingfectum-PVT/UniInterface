@@ -25,12 +25,12 @@ import { RowBetween, RowFixed } from '../Row'
 import AnimatedConfirmation from './AnimatedConfirmation'
 
 const Wrapper = styled.div<{ redesignFlag?: boolean }>`
-  background-color: ${({ redesignFlag, theme }) => redesignFlag && theme.backgroundSurface};
+  background-color: black;
   outline: ${({ redesignFlag, theme }) => redesignFlag && `1px solid ${theme.backgroundOutline}`};
   width: 100%;
   padding: 1rem;
 `
-const Section = styled(AutoColumn)<{ inline?: boolean }>`
+const Section = styled(AutoColumn) <{ inline?: boolean }>`
   padding: ${({ inline }) => (inline ? '0' : '0')};
 `
 
@@ -40,7 +40,7 @@ const BottomSection = styled(Section)`
   padding-bottom: 10px;
 `
 
-const ConfirmedIcon = styled(ColumnCenter)<{ inline?: boolean }>`
+const ConfirmedIcon = styled(ColumnCenter) <{ inline?: boolean }>`
   padding: ${({ inline }) => (inline ? '20px 0' : '32px 0;')};
 `
 

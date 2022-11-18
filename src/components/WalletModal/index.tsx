@@ -69,8 +69,7 @@ const HeaderRow = styled.div<{ redesignFlag?: boolean }>`
 `
 
 const ContentWrapper = styled.div<{ redesignFlag?: boolean }>`
-  background-color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.backgroundSurface : theme.deprecated_bg0)};
-  border: ${({ theme, redesignFlag }) => redesignFlag && `1px solid ${theme.backgroundOutline}`};
+  background-color: black;
   padding: 0 1rem 1rem 1rem;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;

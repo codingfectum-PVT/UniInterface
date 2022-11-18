@@ -148,7 +148,7 @@ export const colors: GlobalPalette = {
   blue100: '#DEE1FF',
   blue200: '#ADBCFF',
   blue300: '#869EFF',
-  blue400: '#d3ac6a',
+  blue400: '#FF017A',
   blue500: '#1267D6',
   blue600: '#1D4294',
   blue700: '#09265E',

@@ -67,7 +67,7 @@ const BodyWrapper = styled.div<{ navBarFlag: NavBarVariant }>`
   width: 100%;  
   max-width: 1300px;
   padding: ${({ navBarFlag }) => (navBarFlag === NavBarVariant.Enabled ? `72px 0px 0px 0px` : `120px 0px 0px 0px`)};
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex: 1;
   ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
@@ -81,7 +81,6 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   position: fixed;
   top: 0;
-  background-color: rgb(20, 18, 14);
   z-index: ${Z_INDEX.sticky};
 `
 

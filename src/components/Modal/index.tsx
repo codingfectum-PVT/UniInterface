@@ -38,7 +38,6 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, rede
   &[data-reach-dialog-content] {
     margin: ${({ redesignFlag }) => (redesignFlag ? 'auto' : '0 0 2rem 0')};
     background-color: ${({ theme }) => theme.deprecated_bg0};
-    border: 1px solid ${({ theme }) => theme.accentAction};
     box-shadow: ${({ theme, redesignFlag }) =>
     redesignFlag ? theme.deepShadow : `0 4px 8px 0 ${transparentize(0.95, theme.shadow1)}`};
     padding: 0px;

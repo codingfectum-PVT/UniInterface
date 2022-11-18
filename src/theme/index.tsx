@@ -147,7 +147,7 @@ function oldColors(darkMode: boolean): Colors {
     deprecated_text5: '#2C2F36',
 
     // backgrounds / greys
-    deprecated_bg0: '#000000',
+    deprecated_bg0: '#110f1b',
     deprecated_bg1: '#212429',
     deprecated_bg2: '#2C2F36',
     deprecated_bg3: '#40444F',

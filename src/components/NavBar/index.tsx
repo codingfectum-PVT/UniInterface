@@ -30,8 +30,8 @@ const LinkItems = styled.a`
   border-bottom: 2px solid transparent;
 
   &:hover,&active,&:nth-child(1){
-    color: #d3ac6a;
-    border-color: #d3ac6a;
+    color: #dc407a;
+    border-color: #dc407a;
   }
 
 `
@@ -66,14 +66,11 @@ const PageTabs = () => {
       <MenuItem href="#/swap" isActive={pathname.startsWith('/swap')}>
         <Trans>Buy</Trans>
       </MenuItem>
-      <MenuItem href={`https://www.dextools.io/app/ether/pair-explorer/0x2eda072ab9203cfdf22c8793602f2e1020fabec2`}>
+      <MenuItem href={`https://www.dextools.io/app/en/ether/pair-explorer/0x192f75cbb3d6fe7af8d1562d681861b424841406`}>
         <Trans>Chart</Trans>
       </MenuItem>
-      <MenuItem href={`https://tsuka2.org/#about`} >
-        <Trans>About</Trans>
-      </MenuItem>
-      <MenuItem href={`https://tsuka2.org/#tokenomics`}>
-        <Trans>Tokenomics</Trans>
+      <MenuItem href={`https://locker.unilock.finance/`} >
+        <Trans>Locker</Trans>
       </MenuItem>
     </>
   )

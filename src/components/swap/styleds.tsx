@@ -27,7 +27,6 @@ export const SwapWrapper = styled.main<{ margin?: string; maxWidth?: string; red
   position: relative;
   background: ${({ theme, redesignFlag }) => (redesignFlag ? theme.backgroundSurface : theme.deprecated_bg0)};
   border-radius: 4px;
-  border: 1px solid ${({ theme, redesignFlag }) => (redesignFlag ? theme.backgroundOutline : 'transparent')};
   padding: 8px;
   z-index: ${Z_INDEX.deprecated_content};
   box-shadow: ${({ redesignFlag }) =>
@@ -40,7 +39,7 @@ export const ArrowWrapper = styled.div<{ clickable: boolean; redesignFlag: boole
   height: ${({ redesignFlag }) => (redesignFlag ? '40px' : '32px')};
   width: ${({ redesignFlag }) => (redesignFlag ? '40px' : '32px')};
   position: relative;
-  margin-bottom: ${({ redesignFlag }) => (redesignFlag ? '-18px' : '-14px')};
+  margin-bottom: ${({ redesignFlag }) => (redesignFlag ? '0px' : '0px')};
   margin-left: auto;
   margin-right: auto;
   background-color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.backgroundInteractive : theme.deprecated_bg1)};
