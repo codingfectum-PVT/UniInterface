@@ -25,9 +25,10 @@ export const PageWrapper = styled.div<{ redesignFlag: boolean; navBarFlag: boole
 // Mostly copied from `AppBody` but it was getting too hard to maintain backwards compatibility.
 export const SwapWrapper = styled.main<{ margin?: string; maxWidth?: string; redesignFlag: boolean }>`
   position: relative;
-  background: ${({ theme, redesignFlag }) => (redesignFlag ? theme.backgroundSurface : theme.deprecated_bg0)};
-  border-radius: 4px;
-  padding: 8px;
+  background: rgba(14, 17, 26, 0.8);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 30px 15px;
   z-index: ${Z_INDEX.deprecated_content};
   box-shadow: ${({ redesignFlag }) =>
     !redesignFlag &&
@@ -35,17 +36,20 @@ export const SwapWrapper = styled.main<{ margin?: string; maxWidth?: string; red
 `
 
 export const ArrowWrapper = styled.div<{ clickable: boolean; redesignFlag: boolean }>`
-  border-radius: 3px;
+  border-radius: 8px;
   height: ${({ redesignFlag }) => (redesignFlag ? '40px' : '32px')};
   width: ${({ redesignFlag }) => (redesignFlag ? '40px' : '32px')};
   position: relative;
-  margin-bottom: ${({ redesignFlag }) => (redesignFlag ? '0px' : '0px')};
+  margin-bottom: -18px;
   margin-left: auto;
+  margin-top: -15px;
   margin-right: auto;
-  background-color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.backgroundInteractive : theme.deprecated_bg1)};
-  border: 4px solid;
+  background-color: #FF017A;
+  border: 5px solid #110A1B;
   border-color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.backgroundSurface : theme.deprecated_bg0)};
 
+  *{color: #ffffff;}
+  
   z-index: 2;
   ${({ clickable }) =>
     clickable

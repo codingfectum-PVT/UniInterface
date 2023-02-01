@@ -5,7 +5,6 @@ import { PageName } from 'analytics/constants'
 import { Trace } from 'analytics/Trace'
 import { ButtonPrimary } from 'components/Button'
 import { AutoColumn } from 'components/Column'
-import { CardBGImage, CardNoise, CardSection, DataCard } from 'components/earn/styled'
 import FormattedCurrencyAmount from 'components/FormattedCurrencyAmount'
 import Loader from 'components/Loader'
 import { AutoRow, RowBetween, RowFixed } from 'components/Row'
@@ -86,11 +85,6 @@ const ProposalTitle = styled.span`
   padding-right: 10px;
 `
 
-const VoteCard = styled(DataCard)`
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #27ae60 0%, #000000 100%);
-  overflow: hidden;
-`
-
 const WrapSmall = styled(RowBetween)`
   margin-bottom: 1rem;
   ${({ theme }) => theme.deprecated_mediaWidth.deprecated_upToSmall`
@@ -155,43 +149,6 @@ export default function Landing() {
             onDismiss={toggleDelegateModal}
             title={showUnlockVoting ? <Trans>Unlock Votes</Trans> : <Trans>Update Delegation</Trans>}
           />
-          <TopSection gap="md">
-            <VoteCard>
-              <CardBGImage />
-              <CardNoise />
-              <CardSection>
-                <AutoColumn gap="md">
-                  <RowBetween>
-                    <ThemedText.DeprecatedWhite fontWeight={600}>
-                      <Trans>Uniswap Governance</Trans>
-                    </ThemedText.DeprecatedWhite>
-                  </RowBetween>
-                  <RowBetween>
-                    <ThemedText.DeprecatedWhite fontSize={14}>
-                      <Trans>
-                        UNI tokens represent voting shares in Uniswap governance. You can vote on each proposal yourself
-                        or delegate your votes to a third party.
-                      </Trans>
-                    </ThemedText.DeprecatedWhite>
-                  </RowBetween>
-                  <ExternalLink
-                    style={{
-                      color: theme.deprecated_white,
-                      textDecoration: 'underline',
-                    }}
-                    href="https://uniswap.org/blog/uni"
-                    target="_blank"
-                  >
-                    <ThemedText.DeprecatedWhite fontSize={14}>
-                      <Trans>Read more about Uniswap governance</Trans>
-                    </ThemedText.DeprecatedWhite>
-                  </ExternalLink>
-                </AutoColumn>
-              </CardSection>
-              <CardBGImage />
-              <CardNoise />
-            </VoteCard>
-          </TopSection>
           <TopSection gap="2px">
             <WrapSmall>
               <ThemedText.DeprecatedMediumHeader style={{ margin: '0.5rem 0.5rem 0.5rem 0', flexShrink: 0 }}>

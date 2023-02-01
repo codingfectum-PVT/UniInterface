@@ -10,7 +10,7 @@ import { NavBarVariant, useNavBarFlag } from 'featureFlags/flags/navBar'
 import { getIsValidSwapQuote } from 'pages/Swap'
 import { darken } from 'polished'
 import { useMemo, useRef } from 'react'
-import { AlertTriangle, ChevronDown, ChevronUp } from 'react-feather'
+import { AlertTriangle } from 'react-feather'
 import { useAppSelector } from 'state/hooks'
 import { useDerivedSwapInfo } from 'state/swap/hooks'
 import styled, { css, useTheme } from 'styled-components/macro'
@@ -65,8 +65,9 @@ const Web3StatusError = styled(Web3StatusGeneric)`
 const Web3StatusConnectButton = styled.button<{ faded?: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
-  background-color: ${({ theme }) => theme.accentActionSoft};
+  background-color: #FF017A;
   border-radius: ${FULL_BORDER_RADIUS}px;
+  color: #ffffff;
   border: none;
   cursor: pointer;
   padding: 0 12px;
@@ -162,13 +163,13 @@ const VerticalDivider = styled.div`
 `
 
 const StyledConnect = styled.div`
-  color: ${({ theme }) => theme.accentAction};
+  color: #ffffff;
   font-weight: 600;
   font-size: 16px;
   margin-right: 8px;
 
   &:hover {
-    color: ${({ theme }) => theme.accentActionSoft};
+    color: #f4f4f4;;
     transition: ${({
   theme: {
     transition: { duration, timing },
@@ -241,13 +242,6 @@ function Web3StatusInner() {
           <>
             {hasSocks && !navbarFlagEnabled ? <Sock /> : null}
             <Text>{ENSName || shortenAddress(account)}</Text>
-            {navbarFlagEnabled ? (
-              walletIsOpen ? (
-                <ChevronUp {...chevronProps} />
-              ) : (
-                <ChevronDown {...chevronProps} />
-              )
-            ) : null}
           </>
         )}
         {!navbarFlagEnabled && !hasPendingTransactions && <StatusIcon connectionType={connectionType} />}
@@ -270,10 +264,8 @@ function Web3StatusInner() {
         {navbarFlagEnabled ? (
           <Web3StatusConnectButton faded={!account}>
             <StyledConnect data-testid="navbar-connect-wallet" onClick={toggleWalletModal}>
-              <Trans>Connect</Trans>
+              <Trans>Connect Wallet</Trans>
             </StyledConnect>
-            <VerticalDivider />
-            {walletIsOpen ? <ChevronUp {...chevronProps} /> : <ChevronDown {...chevronProps} />}
           </Web3StatusConnectButton>
         ) : (
           <Web3StatusConnect onClick={toggleWallet} faded={!account}>

@@ -6,7 +6,6 @@ import { useWeb3React } from '@web3-react/core'
 import { PageName } from 'analytics/constants'
 import { Trace } from 'analytics/Trace'
 import { ButtonError } from 'components/Button'
-import { BlueCard } from 'components/Card'
 import { AutoColumn } from 'components/Column'
 import { NavBarVariant, useNavBarFlag } from 'featureFlags/flags/navBar'
 import JSBI from 'jsbi'
@@ -23,7 +22,7 @@ import {
   useUserVotes,
 } from 'state/governance/hooks'
 import styled from 'styled-components/macro'
-import { ExternalLink, ThemedText } from 'theme'
+import { ExternalLink } from 'theme'
 
 import { CreateProposalTabs } from '../../components/NavigationTabs'
 import { LATEST_GOVERNOR_INDEX } from '../../constants/governance'
@@ -34,7 +33,7 @@ import { ProposalAction, ProposalActionSelector, ProposalActionSelectorModal } f
 import { ProposalEditor } from './ProposalEditor'
 import { ProposalSubmissionModal } from './ProposalSubmissionModal'
 
-const PageWrapper = styled(AutoColumn)<{ navBarFlag: boolean }>`
+const PageWrapper = styled(AutoColumn) <{ navBarFlag: boolean }>`
   padding: ${({ navBarFlag }) => (navBarFlag ? '68px 8px 0px' : '0px')};
 
   @media only screen and (max-width: ${({ theme }) => `${theme.breakpoint.md}px`}) {
@@ -61,9 +60,9 @@ const CreateProposalButton = ({
 }) => {
   const formattedProposalThreshold = proposalThreshold
     ? JSBI.divide(
-        proposalThreshold.quotient,
-        JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(proposalThreshold.currency.decimals))
-      ).toLocaleString()
+      proposalThreshold.quotient,
+      JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(proposalThreshold.currency.decimals))
+    ).toLocaleString()
     : undefined
 
   return (
@@ -179,11 +178,11 @@ export default function CreateProposal() {
     () =>
       Boolean(
         !proposalAction ||
-          !isAddress(toAddressValue) ||
-          !currencyValue?.isToken ||
-          amountValue === '' ||
-          titleValue === '' ||
-          bodyValue === ''
+        !isAddress(toAddressValue) ||
+        !currencyValue?.isToken ||
+        amountValue === '' ||
+        titleValue === '' ||
+        bodyValue === ''
       ),
     [proposalAction, toAddressValue, currencyValue, amountValue, titleValue, bodyValue]
   )
@@ -247,22 +246,6 @@ ${bodyValue}
         <AppBody {...{ maxWidth: '800px' }}>
           <CreateProposalTabs />
           <CreateProposalWrapper>
-            <BlueCard>
-              <AutoColumn gap="10px">
-                <ThemedText.DeprecatedLink fontWeight={400} color={'deprecated_primaryText1'}>
-                  <Trans>
-                    <strong>Tip:</strong> Select an action and describe your proposal for the community. The proposal
-                    cannot be modified after submission, so please verify all information before submitting. The voting
-                    period will begin immediately and last for 7 days. To propose a custom action,{' '}
-                    <ExternalLink href="https://docs.uniswap.org/protocol/reference/Governance/governance-reference#propose">
-                      read the docs
-                    </ExternalLink>
-                    .
-                  </Trans>
-                </ThemedText.DeprecatedLink>
-              </AutoColumn>
-            </BlueCard>
-
             <ProposalActionSelector onClick={handleActionSelectorClick} proposalAction={proposalAction} />
             <ProposalActionDetail
               proposalAction={proposalAction}

@@ -4,7 +4,7 @@ import { ButtonPrimary } from 'components/Button'
 import { AutoColumn } from 'components/Column'
 import CurrencyLogo from 'components/CurrencyLogo'
 import TokenSafetyLabel from 'components/TokenSafety/TokenSafetyLabel'
-import { checkWarning, getWarningCopy, TOKEN_SAFETY_ARTICLE, Warning } from 'constants/tokenSafety'
+import { checkWarning, getWarningCopy, Warning } from 'constants/tokenSafety'
 import { useToken } from 'hooks/Tokens'
 import { ExternalLink as LinkIconFeather } from 'react-feather'
 import { Text } from 'rebass'
@@ -259,9 +259,6 @@ export default function TokenSafety({
           <ShortColumn>
             <InfoText>
               {description}{' '}
-              <StyledExternalLink href={TOKEN_SAFETY_ARTICLE}>
-                <Trans>Learn more</Trans>
-              </StyledExternalLink>
             </InfoText>
           </ShortColumn>
           <LinkColumn>{urls}</LinkColumn>

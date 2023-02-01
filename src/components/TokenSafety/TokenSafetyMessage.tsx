@@ -1,10 +1,8 @@
-import { Trans } from '@lingui/macro'
-import { getWarningCopy, TOKEN_SAFETY_ARTICLE, Warning } from 'constants/tokenSafety'
+import { getWarningCopy, Warning } from 'constants/tokenSafety'
 import { useTokenWarningColor } from 'hooks/useTokenWarningColor'
 import { AlertOctagon, AlertTriangle } from 'react-feather'
 import { Text } from 'rebass'
 import styled from 'styled-components/macro'
-import { ExternalLink } from 'theme'
 import { Color } from 'theme/styled'
 
 const Label = styled.div<{ color: Color }>`
@@ -55,11 +53,6 @@ export default function TokenWarningMessage({ warning, tokenAddress }: TokenWarn
         {Boolean(heading) && ' '}
         {description}
         {Boolean(description) && ' '}
-        {tokenAddress && (
-          <ExternalLink href={TOKEN_SAFETY_ARTICLE}>
-            <Trans>Learn more</Trans>
-          </ExternalLink>
-        )}
       </DetailsRow>
     </Label>
   )

@@ -30,8 +30,12 @@ const InputPanel = styled.div<{ hideInput?: boolean; redesignFlag: boolean }>`
   position: relative;
   z-index: 1;
   width: ${({ hideInput }) => (hideInput ? '100%' : 'initial')};
+  background: ${({ theme }) => (theme.deprecated_bg6)};;
+  padding: 38px 10px 30px;
+  border-radius: 5px;
   transition: height 1s ease;
   will-change: height;
+  min-height:100px;
 `
 
 const FixedContainer = styled.div<{ redesignFlag: boolean }>`
@@ -70,15 +74,9 @@ const CurrencySelect = styled(ButtonGray) <{
   disabled?: boolean
   redesignFlag: boolean
 }>`
+
   align-items: center;
-  background-color: ${({ selected, theme, redesignFlag }) =>
-    redesignFlag
-      ? selected
-        ? theme.backgroundInteractive
-        : theme.accentAction
-      : selected
-        ? theme.deprecated_bg2
-        : theme.deprecated_primary1};
+  background-color: #050609;
   opacity: ${({ disabled }) => (!disabled ? 1 : 0.4)};
   box-shadow: ${({ selected }) => (selected ? 'none' : '0px 6px 10px rgba(0, 0, 0, 0.075)')};
   color: ${({ selected, theme }) => (selected ? theme.deprecated_text1 : theme.deprecated_white)};
@@ -97,17 +95,6 @@ const CurrencySelect = styled(ButtonGray) <{
   justify-content: space-between;
   margin-right: ${({ hideInput }) => (hideInput ? '0' : '12px')};
 
-  ${({ redesignFlag, selected }) =>
-    !redesignFlag &&
-    css`
-      &:hover {
-        background-color: ${({ theme }) => (selected ? theme.deprecated_bg3 : darken(0.05, theme.deprecated_primary1))};
-      }
-
-      &:active {
-        background-color: ${({ theme }) => (selected ? theme.deprecated_bg3 : darken(0.05, theme.deprecated_primary1))};
-      }
-    `}
 
   ${({ redesignFlag, selected }) =>
     redesignFlag &&
@@ -148,7 +135,7 @@ const InputRow = styled.div<{ selected: boolean; redesignFlag: boolean }>`
   margin-top: 5px;
   border-radius: 3px;
   justify-content: space-between;
-  background: #1e1e1e;
+  background: #050609;
 `
 
 const LabelRow = styled.div<{ redesignFlag: boolean }>`
@@ -170,6 +157,10 @@ const FiatRow = styled(LabelRow) <{ redesignFlag: boolean }>`
   min-height: ${({ redesignFlag }) => redesignFlag && '20px'};
   padding: ${({ redesignFlag }) => redesignFlag && '8px 0px 0px 0px'};
   height: ${({ redesignFlag }) => !redesignFlag && '24px'};
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+  width: calc( 100% - 25px);
 `
 
 const Aligner = styled.span`
@@ -202,14 +193,19 @@ const StyledBalanceMax = styled.button<{ disabled?: boolean; redesignFlag: boole
   border: none;
   text-transform: ${({ redesignFlag }) => !redesignFlag && 'uppercase'};
   border-radius: ${({ redesignFlag }) => !redesignFlag && '12px'};
-  color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.accentAction : theme.deprecated_primary1)};
   cursor: pointer;
   font-size: ${({ redesignFlag }) => (redesignFlag ? '14px' : '11px')};
   font-weight: ${({ redesignFlag }) => (redesignFlag ? '600' : '500')};
   margin-left: ${({ redesignFlag }) => (redesignFlag ? '0px' : '0.25rem')};
   opacity: ${({ disabled }) => (!disabled ? 1 : 0.4)};
-  padding: 4px 6px;
   pointer-events: ${({ disabled }) => (!disabled ? 'initial' : 'none')};
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  background: #FF017A;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 2px 5px;
 
   :hover {
     opacity: ${({ disabled }) => (!disabled ? 0.8 : 0.4)};

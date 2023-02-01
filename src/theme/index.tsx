@@ -147,13 +147,13 @@ function oldColors(darkMode: boolean): Colors {
     deprecated_text5: '#2C2F36',
 
     // backgrounds / greys
-    deprecated_bg0: '#110f1b',
+    deprecated_bg0: '#FF017A',
     deprecated_bg1: '#212429',
     deprecated_bg2: '#2C2F36',
     deprecated_bg3: '#40444F',
     deprecated_bg4: '#565A69',
     deprecated_bg5: '#6C7284',
-    deprecated_bg6: '#1A2028',
+    deprecated_bg6: '#050609',
 
     //specialty colors
     deprecated_modalBG: 'rgba(0,0,0,.425)',
@@ -214,7 +214,7 @@ function oldColorsUpdated(darkMode: boolean): Colors {
     deprecated_bg3: darkMode ? ColorsPalette.gray600 : ColorsPalette.gray200,
     deprecated_bg4: darkMode ? ColorsPalette.gray500 : ColorsPalette.gray300,
     deprecated_bg5: darkMode ? ColorsPalette.gray400 : ColorsPalette.gray400,
-    deprecated_bg6: darkMode ? ColorsPalette.gray300 : ColorsPalette.gray500,
+    deprecated_bg6: '#050609',
 
     //specialty colors
     deprecated_modalBG: darkMode ? opacify(40, ColorsPalette.black) : opacify(30, ColorsPalette.black),

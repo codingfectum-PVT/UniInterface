@@ -15,11 +15,11 @@ export const BaseButton = styled(RebassButton) <
     altDisabledStyle?: boolean
   } & ButtonProps
 >`
-  padding: ${({ padding }) => padding ?? '16px'};
+  padding: ${({ padding }) => padding ?? '10px'};
   width: ${({ width }) => width ?? '100%'};
   font-weight: 500;
   text-align: center;
-  border-radius: ${({ $borderRadius }) => $borderRadius ?? '20px'};
+  border-radius: 5px;
   outline: none;
   border: 1px solid transparent;
   color: ${({ theme }) => theme.deprecated_text1};
@@ -54,7 +54,8 @@ export const ButtonPrimary = styled(BaseButton) <{ redesignFlag?: boolean }>`
   background-color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.accentAction : theme.deprecated_primary1)};
   font-size: ${({ redesignFlag }) => redesignFlag && '20px'};
   font-weight: ${({ redesignFlag }) => redesignFlag && '600'};
-  padding: ${({ redesignFlag }) => redesignFlag && '16px'};
+  padding: ${({ redesignFlag }) => redesignFlag && '10px'};
+  margin-top: 20px;
   color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.accentTextLightPrimary : 'white')};
   &:focus {
     box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.05, theme.deprecated_primary1)};
@@ -80,11 +81,11 @@ export const ButtonPrimary = styled(BaseButton) <{ redesignFlag?: boolean }>`
 `
 
 export const ButtonLight = styled(BaseButton) <{ redesignFlag?: boolean }>`
-  background-color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.accentActionSoft : theme.deprecated_primary5)};
-  color: ${({ theme, redesignFlag }) => (redesignFlag ? theme.accentAction : theme.deprecated_primaryText1)};
+  background-color: #FF017A;
+  color: #ffffff;
   font-size: ${({ redesignFlag }) => (redesignFlag ? '20px' : '16px')};
   font-weight: ${({ redesignFlag }) => (redesignFlag ? '600' : '500')};
-
+  margin-top: 20px;
   &:focus {
     box-shadow: 0 0 0 1pt
       ${({ theme, disabled, redesignFlag }) =>

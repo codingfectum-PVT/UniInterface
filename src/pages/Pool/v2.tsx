@@ -24,7 +24,7 @@ import { useV2Pairs } from '../../hooks/useV2Pairs'
 import { useTokenBalancesWithLoadingIndicator } from '../../state/connection/hooks'
 import { useStakingInfo } from '../../state/stake/hooks'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
-import { ExternalLink, HideSmall, ThemedText } from '../../theme'
+import { HideSmall, ThemedText } from '../../theme'
 
 const PageWrapper = styled(AutoColumn)`
   max-width: 640px;
@@ -161,15 +161,6 @@ export default function Pool() {
                     </Trans>
                   </ThemedText.DeprecatedWhite>
                 </RowBetween>
-                <ExternalLink
-                  style={{ color: theme.deprecated_white, textDecoration: 'underline' }}
-                  target="_blank"
-                  href="https://docs.uniswap.org/protocol/V2/concepts/core-concepts/pools"
-                >
-                  <ThemedText.DeprecatedWhite fontSize={14}>
-                    <Trans>Read more about providing liquidity</Trans>
-                  </ThemedText.DeprecatedWhite>
-                </ExternalLink>
               </AutoColumn>
             </CardSection>
             <CardBGImage />
@@ -228,16 +219,6 @@ export default function Pool() {
                   </EmptyProposals>
                 ) : allV2PairsWithLiquidity?.length > 0 || stakingPairs?.length > 0 ? (
                   <>
-                    <ButtonSecondary>
-                      <RowBetween>
-                        <Trans>
-                          <ExternalLink href={'https://v2.info.uniswap.org/account/' + account}>
-                            Account analytics and accrued fees
-                          </ExternalLink>
-                          <span> ↗ </span>
-                        </Trans>
-                      </RowBetween>
-                    </ButtonSecondary>
                     {v2PairsWithoutStakedAmount.map((v2Pair) => (
                       <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
                     ))}

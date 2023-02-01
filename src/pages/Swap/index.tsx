@@ -614,7 +614,7 @@ export default function Swap() {
                     color={theme.textPrimary}
                   >
                     <ArrowDown
-                      size="16"
+                      size="26"
                       color={
                         currencies[Field.INPUT] && currencies[Field.OUTPUT]
                           ? theme.deprecated_text1

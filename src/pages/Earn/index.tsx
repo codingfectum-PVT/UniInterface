@@ -12,10 +12,10 @@ import Loader from '../../components/Loader'
 import { RowBetween } from '../../components/Row'
 import { BIG_INT_ZERO } from '../../constants/misc'
 import { STAKING_REWARDS_INFO, useStakingInfo } from '../../state/stake/hooks'
-import { ExternalLink, ThemedText } from '../../theme'
+import { ThemedText } from '../../theme'
 import { Countdown } from './Countdown'
 
-const PageWrapper = styled(AutoColumn)<{ navBarFlag: boolean }>`
+const PageWrapper = styled(AutoColumn) <{ navBarFlag: boolean }>`
   padding: ${({ navBarFlag }) => (navBarFlag ? '68px 8px 0px' : '0px')};
   max-width: 640px;
   width: 100%;
@@ -87,15 +87,6 @@ export default function Earn() {
                   </Trans>
                 </ThemedText.DeprecatedWhite>
               </RowBetween>{' '}
-              <ExternalLink
-                style={{ color: theme.deprecated_white, textDecoration: 'underline' }}
-                href="https://uniswap.org/blog/uni/"
-                target="_blank"
-              >
-                <ThemedText.DeprecatedWhite fontSize={14}>
-                  <Trans>Read more about UNI</Trans>
-                </ThemedText.DeprecatedWhite>
-              </ExternalLink>
             </AutoColumn>
           </CardSection>
           <CardBGImage />

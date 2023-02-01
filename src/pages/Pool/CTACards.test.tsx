@@ -25,6 +25,6 @@ describe('CTAcard links', () => {
         <CTACards />
       </Router>
     )
-    expect(screen.getByTestId('cta-infolink')).toHaveAttribute('href', 'https://info.uniswap.org/#/pools')
+    expect(screen.getByTestId('cta-infolink')).toHaveAttribute('href', '#')
   })
 })

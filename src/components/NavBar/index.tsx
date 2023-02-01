@@ -26,14 +26,15 @@ interface MenuItemProps {
 const LinkItems = styled.a`
   color: #ffffff;
   background-color: unset;
-  border-radius: 0px; 
+  border-radius: 0px;
   border-bottom: 2px solid transparent;
 
-  &:hover,&active,&:nth-child(1){
+  &:hover,
+  &active,
+  &:nth-child(1) {
     color: #dc407a;
     border-color: #dc407a;
   }
-
 `
 const MenuItem = ({ href, id, isActive, children }: MenuItemProps) => {
   return (
@@ -64,12 +65,12 @@ const PageTabs = () => {
   return (
     <>
       <MenuItem href="#/swap" isActive={pathname.startsWith('/swap')}>
-        <Trans>Buy</Trans>
+        <Trans>Swap</Trans>
       </MenuItem>
       <MenuItem href={`https://www.dextools.io/app/en/ether/pair-explorer/0x192f75cbb3d6fe7af8d1562d681861b424841406`}>
         <Trans>Chart</Trans>
       </MenuItem>
-      <MenuItem href={`https://locker.unilock.finance/`} >
+      <MenuItem href={`https://uni-lock.finance/`}>
         <Trans>Locker</Trans>
       </MenuItem>
     </>
@@ -86,10 +87,10 @@ const Navbar = () => {
         <Box display="flex" height="full" flexWrap="nowrap" alignItems="stretch" justifyContent="space-between">
           <Box>
             <Box as="a" href="#/swap" className={styles.logoContainer}>
-              <img src='./images/logo.png' style={{ width: 'auto', height: 50 }} />
+              <img src="./images/logo.png" style={{ width: 'auto', height: 50 }} />
             </Box>
           </Box>
-          <Box display="flex" >
+          <Box display="flex">
             <Row gap="4" display={{ sm: 'none', lg: 'flex' }}>
               <PageTabs />
             </Row>
